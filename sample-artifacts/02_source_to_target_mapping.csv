@@ -1,0 +1,7 @@
+source_table,source_column,target_table,target_column,transformation,confidence,review_required
+CUSTOMER,CUST_ID,dim_customer,customer_id,CAST(CUST_ID AS STRING),0.96,false
+CUSTOMER,CUST_NAME,dim_customer,customer_name,TRIM(CUST_NAME),0.92,false
+CUSTOMER,COUNTRY_CD,dim_customer,country_code,UPPER(COUNTRY_CD),0.89,false
+ORDERS,ORDER_ID,fact_order,order_id,CAST(ORDER_ID AS STRING),0.95,false
+ORDERS,ORDER_DT,fact_order,order_date,DATE(ORDER_DT),0.86,true
+ORDERS,AMOUNT,fact_order,order_amount,CAST(AMOUNT AS NUMERIC),0.91,false
